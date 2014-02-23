@@ -1,0 +1,26 @@
+<hr class="feature">
+<div class="row featurette">
+  <div class="col-md-8">
+    <h2>
+      {{course.title}}
+      <a ng-show="course.cost !== false && course.state === 'live'" type="button" class="btn btn-primary" ng-href="{{pay}}">Purchase</a>
+    </h2>
+    <p class="lead">{{course["short-description"]}}</p>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail-wand center-block">
+      <img class="center-block" src="{{course['header-image']}}">
+    </div>
+  </div>
+</div>
+<ol ng-show="course.resources" class="breadcrumb course-detail-nav">
+  <li>
+    <a ng-href="#/courses/{{course.slug}}">Main</a>
+  </li>
+  <li >
+    <a ng-href="#/courses/{{course.slug}}/resources">Student Resources</a>
+  </li>
+</ol>
+<hr class="feature">
+<section ng-show="details" ng-include="'../partials/course-detail/course-detail.html'"></section>
+<section ng-show="resources" ng-include="'../partials/course-detail/course-resources.html'"></section>

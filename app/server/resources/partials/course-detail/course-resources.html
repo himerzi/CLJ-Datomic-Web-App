@@ -1,0 +1,26 @@
+<div class="row" ng-controller="CourseResourceCtrl">
+	<div class="col-sm-12">
+		<section ng-show="course['inst?']">
+		<label for="addResourceForm">
+			Add a course link
+			<span class="glyphicon glyphicon-question-sign" dactic-popover="Share a link with your class. Anything that might be useful to them, e.g. a link to the class forum, github account, online tutorials etc..."></span>
+		</label>
+		<form class="form-inline" id="addResourceForm" role="form" ng-submit="update(resource)" >
+			<div class="form-group">
+				<label class="sr-only" for="exampleInputEmail2">Description</label>
+				<input type="text" class="form-control" id="exampleInputEmail2" ng-model="resource.description" placeholder="Link Description"></div>
+			<div class="form-group">
+				<label class="sr-only" for="exampleInputPassword2">URL</label>
+				<input type="text" class="form-control" id="exampleInputPassword2" ng-model="resource.url" placeholder="URL"></div>
+			<button type="submit" class="btn btn-default">Add</button>
+		</form>
+	</section>
+		<dl ng-repeat="resource in course.resources" class="dl-horizontal">
+			<dt>{{resource.description}}</dt>
+			<dd>
+				<a ng-href="http://{{resource.url}}">{{resource.url}}</a>
+				<a ng-show="course['inst?']" ng-click="removeResource(resource.id, $index)" href="">- remove</a>
+			</dd>
+		</dl>
+	</div>
+</div>

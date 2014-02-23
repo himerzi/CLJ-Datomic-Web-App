@@ -1,0 +1,67 @@
+<div class="row " ng-controller="CourseProposalCtrl">
+	<div class="col-sm-12 col-md-6 col-md-offset-3">
+		<p class="lead"> <strong>Submit a course proposal.</strong>
+			Glad to hear you're interested in teaching a
+			course! You'll find it's rewarding & fun.  We'll have a look at your proposal once its
+			been submitted, and be in touch. <a href="#/courses/example-course">For inspiration, see here.</a>
+		</p>
+		<form role="form" name="proposalForm" ng-controller="CourseProposalFormCtrl" ng-submit="update(course)">
+			<div class="form-group">
+				<label for="courseTitle">Course Title <span class="glyphicon glyphicon-question-sign" dactic-popover="Give a brief & descriptive title"></span></label>
+				<input type="text" ng-model="course.title" class="form-control" id="courseTitle" dactic-popover="An Introduction to Clojure, Making Cool Things with WebGL, SICP Chapter One, etc..." data-title="Example" required></div>
+			<div class="form-group">
+				<label for="courseShortDescription">Brief Description <span class="glyphicon glyphicon-question-sign" dactic-popover="Summarize what the course is about in one sentence"></span></label>
+				<input type="text" class="form-control" ng-model="course['short-description']" id="courseShortDescription" dactic-popover="In this introduction to clojure, you'll learn to model problems in a functional programming language" data-title="Example"></div>
+			<div class="form-group">
+				<label for="courseDescription">Description <i class="glyphicon glyphicon-question-sign" dactic-popover="Why should someone be interested in this course? Try to explain who this course is for, and why it'll be fun and interesting?"></i></label>
+				<textarea type="text" class="form-control" id="courseDescription" dactic-popover="This course will help people make the leap from thinking in OO or procedural terms, into thinking in a purely Functional way. We'll cover Clojure from the ground up, and hopefully get you to a point where you're confident with exploring the language by yourself." data-title="Example" ng-model="course.description"></textarea></div>
+			<div class="form-group">
+				<label for="takeawaysField">What will people learn? <i class="glyphicon glyphicon-question-sign"  dactic-popover="List all of the things people can expect to take away from this course. And remember to include a final project which students can walk away with and keep hacking on after the course has ended."></i></label>
+				<ul>
+					<li ng-repeat="ta in course.takeaways">
+						{{ta}} - <a ng-click="course.takeaways.splice($index, 1);" href="">remove</a>
+					</li>
+				</ul>
+				<div class="input-group">
+					<input type="text" class="form-control" ng-model="takeaway" id="takeawaysField" data-html="true" placeholder="" dactic-popover="<ul><li>An understanding of the syntax, and core library</li><li>An understanding of the richer aspects of Lisp programming (Macros, immutable data structures)<li>Your own simple web app implementing the game of Snake in Clojure</li></ul>" data-title="Example" >
+					<span class="input-group-btn input-group-lg">
+					  <button class="btn btn-default" type="button" ng-click="course.takeaways.push(takeaway); takeaway = ''">Add</button>
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="coursePlan">Course Plan <i class="glyphicon glyphicon-question-sign" dactic-popover="Describe at a high-level what will be accomplished each day. Each day should interleave a couple of short practical exercises with lecture-style introductions to new concepts."></i></label>
+				<ul>
+					<li ng-repeat="pl in course.plan">
+						Day {{$index + 1}}: {{pl}} - <a ng-click="course.plan.splice($index, 1);" href="">remove</a>
+					</li>
+				</ul>
+				<div class="input-group">
+					<span class="input-group-addon">Day {{course.plan.length + 1}}</span>
+
+					<input type="text" class="form-control" ng-model="plan" id="coursePlan" placeholder=""  data-html="true" dactic-popover="<ul><li>Day 1: An introduction to LISP syntax. Using the built-in types and data structures in Clojure. Exercise: Processing data.
+</li><li>Day 2: Exploring libraries in Clojure. Side effects and state. Exercise: building a web app.</li><li>Day 3: protocols, records and types. Exercise: Turning your web app into a game of Snake.</li></ul>" data-title="Example" >
+					<span class="input-group-btn">
+					  <button class="btn btn-default" type="button" ng-click="course.plan.push(plan); plan=''" >Add</button>
+					</span>
+				</div>
+
+
+			</div>
+			<div class="form-group">
+				<label for="environmentSetup">How should students setup their programming environment? <i class="glyphicon glyphicon-question-sign" dactic-popover="Tell your students what they need to do to prepare for day one, and how they should do it."></i></label>
+				<textarea type="text" class="form-control" id="environmentSetup" dactic-popover="To get clojure running you'll need to have JRE 7 (http://java.com/en/download/index.jsp), Leiningen (http://leiningen.org/), and Light Table installed (http://www.lighttable.com/)." data-title="Example" ng-model="course['programming-environment']"></textarea></div>
+			<div class="form-group">
+				<label for="instructorInfo">Tell us about yourself</label>
+				<textarea type="text" class="form-control" ng-model="course['instructor-about']" id="instructorInfo" placeholder="" dactic-popover="Why do you know about this subject? What do you like to hack on? Tell us about your online presence (Github, Linkedin etc...). Let your students know they're in good hands" data-title="Example"></textarea></div>
+			<p class="text-info">{{form.message}}</p>
+			<label class="text-success" ng-show="showSuccess" for="inputSuccess">Thanks, we'll be in touch shortly.</label>
+			<div class="btn-group">
+			<button type="submit" ng-click="course.state='submit'" class="btn btn-primary">Submit</button>
+			<button type="submit" ng-click="course.state='inProgress'" class="btn btn-success">Save progress</button>
+		</div>
+		 <i class="glyphicon glyphicon-question-sign" dactic-popover="You can finish this form later, access it from your profile page."></i>
+
+		</form>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/instructor-about
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "String representing why the instructor teaching this course, is a good fit for this course specifically."
+  :db.install/_attribute :db.part/db}]
+
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :venue/logo-img
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "url for image used to represent this venue on website"
+  :db.install/_attribute :db.part/db}]
+
+[[:db/add #db/id[:db.part/db] :db/ident :course.state/unapproved]]
+
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/header-image
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "String representing url where header image resides"
+  :db.install/_attribute :db.part/db}
+ ]
+[:db/add #db/id[:db.part/db] :db/ident :course.state/pre-submission]
+
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/programming-environment
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "String describing how the student should setup his programming  environment for this course, also including how to set it up"
+  :db.install/_attribute :db.part/db}
+ ]
+
+;; this migration hasn't been applied.
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/slug
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "slug used to represent a user in URL's and such"
+  :db.install/_attribute :db.part/db}
+ ]

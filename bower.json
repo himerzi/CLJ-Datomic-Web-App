@@ -1,0 +1,17 @@
+{
+  "name": "owl",
+  "version": "2.0.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "devDependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "angular-touch": "*",
+    "angular-resource": "*",
+    "bootstrap": "*",
+    "jquery": "*"
+
+  }
+}

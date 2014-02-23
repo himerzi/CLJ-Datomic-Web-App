@@ -1,0 +1,251 @@
+/*site-wide*/
+html{
+	height: 100%
+}
+body {
+  padding-top: 70px;
+  height: 100%
+}
+/*for sticky footer*/
+#stickyWrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+.glow-rim{
+	display: inline-block;
+	color: #38CCB5;
+	border: 1px solid #ddd;
+
+	border-radius: 50%;
+	padding: 3px;
+	background-color: #fff;
+		-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.nav-input-align{
+	width: 238px;
+}
+.header-pad-form-element {
+	position: relative;
+	display: block;
+	padding: 8px 0px;
+}
+
+.header-margin-button{
+	margin-top: 8px;
+}
+
+.nav > li > a > i {
+	font-size: 24px;
+}
+
+.navbar-nav > li > a.nav-twitter-wrap{
+	padding-top: 12.5px;
+	padding-bottom: 12.5px;
+}
+
+.course-detail-nav {
+	margin-bottom: -20px;
+}
+.course-detail-nav > li + li:before {
+	content: "| ";
+}
+
+/*grid*/
+.feed-section .row{
+	margin-bottom: 20px;
+}
+.feed-section .row{
+	margin-bottom: 20px;
+}
+.nav-header-container h3>a, .nav-header-container h3>a:hover, .nav-header-container hr>a:focus{
+	color:inherit;
+	text-decoration: none;
+}
+hr.feature{
+	border-top: 2px solid #979926;
+}
+.nav-header-container{
+	//margin-bottom: -19px;
+	margin-top: -6px;
+}
+.form-row-logo{
+	margin-top: 38px;
+}
+.thumbnail{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	color: #38CCB5;
+}
+.thumbnail-wand > img{
+	max-width: 80%;
+	margin-top: 6px;
+	margin-left: 15px;
+}
+.thumbnail-wand{
+	width: 120px;
+	height: 120px;
+	margin-top: 35px;
+}
+.featurette .glyphicon{
+	font-size: 45px;
+	margin-top: 25%;
+}
+.feature-course{
+	text-align: center;
+	margin-bottom: 14px;
+
+
+
+}
+.feature-course > .content-wrap{
+	width: 80%;
+	border: 1px solid #979926;
+	border-radius: 3%;
+	min-height:370px;
+	padding: 7px;
+	position: relative;
+}
+.right-side-down{
+	margin-top:60px;
+}
+
+.center-absolute-wrapper{
+	position: absolute;
+	bottom: 7px;
+	text-align: center;
+	left: 50%;
+}
+.center-absolute-wrapper > .center-absolute-element{
+	position: relative;
+	left: -50%;
+}
+
+.splash-nav{
+	cursor: pointer;
+}
+.dactic{
+	color: #CC2A09;
+}
+.dactic-faq-panel h2{
+	font-size: 30px;
+}
+.dactic-faq-panel p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.register-btn-align{
+	margin-top: 50px;
+}
+
+.btn > p.lead{
+	margin-bottom: 0;
+}
+
+span.inline-img{
+	max-width: 215px;
+}
+span.inline-img > img{
+	max-width: inherit;
+}
+
+/*sign-in form stuff*/
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.weight-light{
+	font-weight: 200;
+}
+
+/* User profiles */
+
+.list-group-item > .list-group .list-group-item {
+border: none;
+}
+
+.list-group-item > .list-group {
+	margin-bottom: 0;
+}
+.slim-margin {
+	margin-top: 0;
+	margin-bottom: 0px;
+}
+.no-bottom-margin{
+	margin-bottom:0;
+}
+
+.profile-thumbnail{
+	width: 150px;
+
+}
+
+.profile-thumbnail .h3{
+
+}
+
+
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+
+      /* Set the fixed height of the footer here */
+      #footer {
+        background-color: #f5f5f5;
+        height: 60px;
+      }
+      #footer .container{
+      	width: auto;
+      	max-width: 680px;
+      	padding: 0 15px;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+    }
+

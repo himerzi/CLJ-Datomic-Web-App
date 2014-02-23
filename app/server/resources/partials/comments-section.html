@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading clearfix">
+    <form role="form">
+      <div class="form-group">
+        <label for="yourCommentTextArea">Your comment</label>
+        <textarea class="form-control" id="yourCommentTextArea" rows="3" ng-model="comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-default pull-right" ng-click="addComment(comment)">Post Comment</button>
+    </form>
+  </div>
+
+  <div class="panel-body">
+
+    <ul class="media-list">
+      <li ng-repeat="com in question.comments" class="media">
+
+        <div class="media-body">
+
+          <p><span class="glyphicon glyphicon-comment"></span> {{com}}</p>
+          <!-- Nested media object -->
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>

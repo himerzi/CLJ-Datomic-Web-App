@@ -1,0 +1,110 @@
+<div class="row featurette">
+  <div class="col-md-6">
+    <p class="lead"> <strong>Description</strong>
+    </p>
+    <p class="lead">{{course.description}}</p>
+  </div>
+  <div class="col-md-6">
+    <p class="lead"> <strong>What Will I Learn?</strong>
+    </p>
+
+    <ul>
+      <li ng-repeat="ta in course.takeaways">
+        <p class="lead">{{ta}}</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p class="lead">
+      <strong>Course Plan</strong>
+    </p>
+    <ul>
+      <li ng-repeat="pl in course.plan">
+        <p class="lead">Day {{$index + 1}}: {{pl}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <p class="lead">
+      <strong>Your Instructor:
+        <a ng-href="#/profile/{{course.instructor.id}}">
+          {{course.instructor['first-name']}} {{course.instructor['last-name']}}
+        </a></strong>
+    </p>
+    <div class="col-md-2">
+      <div class="center-block">
+        <a ng-href="#/profile/{{course.instructor.id}}" class=" glow-rim">
+          <img ng-src="{{course.instructor.gravatar}}?s=100" class="img-circle img-responsive"></a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <blockquote>
+        <p class="lead">{{course["instructor-about"]}}</p>
+      </blockquote>
+    </div>
+
+  </div>
+</div>
+<hr class="feature">
+<div class="row featurette"></div>
+<div class="row">
+  <div class="col-md-6">
+    <p class="lead">
+      <strong>Dates & details</strong>
+    </p>
+
+    <ul>
+      <li ng-show="course.dates" >
+        <p class="lead">
+          <span ng-repeat="date in course.dates">{{date}}<span ng-show=" ! $last ">, </span></span>
+        </p>
+      </li>
+      <li>
+        <p class="lead">
+          7-9pm
+        </p>
+      </li>
+      <li ng-show="course.dates">
+        <p class="lead">Total Spaces: {{course['available-spaces']}}</p>
+      </li>
+
+      <li ng-show="course.cost !== false">
+        <p  class="lead">
+          Price: £{{course.cost}}
+          <a ng-show="course.state === 'live'" type="button" class="btn btn-primary" ng-href="{{pay}}">Purchase</a>
+        </p>
+      </li>
+      <li ng-show="course.venue">
+        <p class="lead">Hosted by: {{course['venue']['name']}}, {{course['venue']['address']}} <img style="max-height: 70px;"ng-src="{{course['venue']['logo-img']}}" class="img-rounded img-responsive"></p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <p class="lead">
+      <strong>Programming Environment Setup </strong><i class="glyphicon glyphicon-question-sign" dactic-popover="Try to have your environment set-up prior to the course starting"></i>
+    </p>
+    <p class="lead">
+      {{course['programming-environment']}}
+    </p>
+  </div>
+</div>
+
+<hr class="feature">
+
+<div class="row featurette">
+  <div class="col-md-6">
+    <p class="lead">
+      <strong>Questions?</strong>
+    </p>
+    <p class="lead">
+      Questions are graciously welcomed,
+      <a href="mailto:questions@dactic.io">email questions@dactic.io</a>
+    </p>
+  </div>
+</div>
+<div class="row center-block"></div>
+
+<hr class="feature">

@@ -1,0 +1,22 @@
+
+<div class="row">
+	<div class="col-sm-12 col-md-6 col-md-offset-3">
+		<h2 class="ng-scope">Registration</h2>
+		<hr class="feature">
+		<form role="form" name="registrationForm" ng-controller="RegCtrl" ng-submit="update(user)">
+			<p class="text-info">{{login.message}}</p>
+			<div class="form-group">
+				<label for="userName" >Your name (First & last, please) <span class="glyphicon glyphicon-question-sign" dactic-popover="Your full name will not be publicly viewable, unless you are an instructor."></span></label>
+				<input type="text" id="userName" ng-model="user.name" class="form-control" required></div>
+			<div class="form-group">
+				<label for="emailField">Email</label>
+				<input type="email" class="form-control" ng-model="user.email" id="emailField" required></div>
+			<div class="form-group">
+				<label for="passwordField">Password</label>
+				<input type="password" class="form-control" id="passwordField" required ng-model="user.password"></div>
+
+			<button type="submit" ng-hide="showSuccess" ng-disabled="form.$invalid" class="btn btn-primary">Register</button>
+			<label class="text-success" ng-show="showSuccess" for="inputSuccess">Thanks, you've been registered. Feel free to login.</label>
+		</form>
+	</div>
+</div>

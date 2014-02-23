@@ -1,0 +1,76 @@
+<hr class="feature">
+<div class="row featurette">
+	<div class="col-md-7">
+		<p class="lead"><strong>Register to host a course.</strong> Hosting is a great way to get your name out amongst developers, and meet curious and talented developers.</p>
+		<form role="form" ng-controller="StartupFormRegCtrl">
+			<div class="form-group">
+				<label for="exampleInputcompName1">What's your company's name?</label>
+				<input type="text" ng-model="company.companyName" class="form-control" id="exampleInputcompName1" placeholder=""></div>
+			<div class="form-group">
+				<label for="exampleInputEmail1">What email address can we use to contact you?</label>
+				<input type="email" class="form-control" ng-model="company.email" id="exampleInputEmail1" placeholder=""></div>
+			<div class="form-group">
+				<label for="exampleInputpostCode1">What's your office postcode?</label>
+				<input type="postCode" class="form-control" ng-model="company.postCode" id="exampleInputpostCode1" placeholder=""></div>
+			<button type="submit" ng-disabled="!company.companyName && !company.email && !company.postcode" ng-click="update(company)" class="btn btn-default">Register</button>
+			<label class="text-success" ng-show="showSuccess" for="inputSuccess">Thanks, we'll be in touch shortly.</label>
+		</form>
+	</div>
+	<div class="col-md-5 form-row-logo">
+	  <img src="img/brainstogether.svg" class="img-rounded center-block" height="160"></div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="startups">
+	<div class="col-md-10">
+		<h2 class="featurette-heading">
+			What does "hosting" a course mean?
+		</h2>
+		<p class="lead" id="why-host">
+			Hosting a course means you have Wifi and can seat eleven people, for one evening a week for four weeks (the typical length of a course). Hosts are listed as sponsors for the course, and you're free to mingle & advertise yourselves to the developers in attendance.
+		</p>
+	</div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="startups">
+	<div class="col-md-10">
+		<h2 class="featurette-heading">
+			Which course will I host?
+		</h2>
+
+		<p class="lead" id="why-host">
+			We'll ask you to host whichever one of <a href="#/#future-courses">our courses</a> is starting at the same time as you have availablity to host. We try to match you with courses that emphasise a technology you use.
+		</p>
+	</div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="startups">
+	<div class="col-md-10">
+		<h2 class="featurette-heading">
+			What if we'd like to teach a course based on our in-house tech?
+		</h2>
+
+		<p class="lead" id="why-host">
+			If your company has an interesting stack, or has developed some really interesting technology, we'd love to talk about co-designing a course with you.
+		</p>
+	</div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="startups">
+	<div class="col-md-10">
+		<h2 class="featurette-heading">
+			Who attends these courses?
+		</h2>
+
+		<p class="lead" id="why-host">
+			 Our students are experienced developers that are interested in exploring new technologies.
+		</p>
+	</div>
+</div>
+
+
+<hr class="feature">
+
+<!-- Site footer -->
+<div class="footer">
+	<p>© Dactic 2013</p>
+</div>

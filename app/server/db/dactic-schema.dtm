@@ -1,0 +1,228 @@
+[
+ ;; course
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "A course's title"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "A course's description"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/short-description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A course's shortened description"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/cost
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "A course's cost"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/total-spaces
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "The maximum number of students that can attend this course"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/available-spaces
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "The number of remaining spaces on this course"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/plan
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A list encoded as a string. Describes a high level course plan"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/venue
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "Course venue"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :course/slug
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A course's url slug"
+  :db/unique :db.unique/identity
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/takeaways
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A list encoded as a string of what a student can expect to learn by taking this course"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/instructor
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "All of the instructors for this course"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/dates
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/many
+  :db/doc "Dates when this course will meet"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/meeting-time
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/doc "Time when sessions are held (we're only interested in the hour and minute portion of this date value)"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :course/state
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "A course's state. Can be pre-aproval, active, finished etc"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :course/resources
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "instructor posted urls"
+  :db.install/_attribute :db.part/db}
+
+ ;; Course Resources
+ {:db/id #db/id[:db.part/db]
+  :db/ident :resource/description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "instructor posted url description"
+  :db.install/_attribute :db.part/db}
+
+   {:db/id #db/id[:db.part/db]
+  :db/ident :resource/url
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "instructor posted url"
+  :db.install/_attribute :db.part/db}
+
+ ;; Venue
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :venue/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/unique :db.unique/identity
+  :db/doc "Venue name (typically company name)"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :venue/address
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "Venue address"
+  :db.install/_attribute :db.part/db}
+
+ ;; User
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/about
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "a little bit about the user"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/email
+  :db/unique :db.unique/identity
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User Email"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/password
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User Password"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/first-name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User First Name"
+  :db.install/_attribute :db.part/db}
+
+{:db/id #db/id[:db.part/db]
+  :db/ident :user/last-name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "User Last Name"
+ :db.install/_attribute :db.part/db}
+
+{:db/id #db/id[:db.part/db]
+  :db/ident :user/type
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "User Type, i.e. admin, instructor, student, user"
+ :db.install/_attribute :db.part/db}
+
+{:db/id #db/id[:db.part/db]
+  :db/ident :user/courses
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "Courses the user has been involved in, either taught or taken as a student"
+ :db.install/_attribute :db.part/db}
+
+
+
+;; Course State enums
+
+[:db/add #db/id[:db.part/db] :db/ident :course.state/unnaproved]
+[:db/add #db/id[:db.part/db] :db/ident :course.state/live]
+[:db/add #db/id[:db.part/db] :db/ident :course.state/started]
+[:db/add #db/id[:db.part/db] :db/ident :course.state/finished]
+
+ ;; User Type enum
+
+[:db/add #db/id[:db.part/db] :db/ident :user.type/user]
+[:db/add #db/id[:db.part/db] :db/ident :user.type/student]
+[:db/add #db/id[:db.part/db] :db/ident :user.type/instructor
+[:db/add #db/id[:db.part/db] :db/ident :user.type/admin]
+
+;; Ordered List
+;; {:db/id #db/id[:db.part/db]
+;;   :db/ident :list/text
+;;   :db/valueType :db.type/string
+;;   :db/cardinality :db.cardinality/one
+;;   :db/doc "Item information"
+;;  :db.install/_attribute :db.part/db}
+
+;; {:db/id #db/id[:db.part/db]
+;;   :db/ident :list/position
+;;   :db/valueType :db.type/long
+;;   :db/cardinality :db.cardinality/one
+;;   :db/doc "Item Position"
+;;   :db.install/_attribute :db.part/db}
+
+
+ ]

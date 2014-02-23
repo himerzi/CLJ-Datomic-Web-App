@@ -1,0 +1,14 @@
+{
+  "name": "dactic",
+  "description": "no description",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "bower": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-shell": "~0.2.2",
+    "grunt-build-control": "~0.1"
+  }
+}

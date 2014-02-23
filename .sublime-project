@@ -1,0 +1,13 @@
+{
+    "folders":
+    [
+        {
+
+            "folder_exclude_patterns": ["dist"]
+        },
+        {
+            "path": "docs",
+            "file_exclude_patterns": ["*.css"]
+        }
+    ]
+}

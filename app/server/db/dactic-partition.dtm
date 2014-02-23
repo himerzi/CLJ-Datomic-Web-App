@@ -1,0 +1,6 @@
+;; main app partition
+[
+{:db/id #db/id[:db.part/db]
+ :db/ident :app
+ :db.install/_partition :db.part/db}
+]

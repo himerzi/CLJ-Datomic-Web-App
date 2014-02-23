@@ -1,0 +1,182 @@
+<hr class="feature">
+<div class="row featurette">
+  <div class="col-md-8">
+    <h2 class="featurette-heading">Developers getting together to learn something.</h2>
+    <p class="lead">
+      Developers use our site to get together and learn new things from other developers via affordable, semi-structured, in-person, mentored courses - like Coursera, but in-person.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <img src="img/brainstogether.svg" class="img-rounded center-block" height="160"></div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="future-courses"></div>
+<div class="row featurette" ng-controller="CourseListCtrl">
+
+  <section ng-repeat="course in courses" ng-include="'../partials/course-pin.html'"></section>
+
+</div>
+<div class="row featurette" id="current-courses">
+
+  <div class="col-sm-4 feature-course">
+    <div class="content-wrap center-block">
+      <div class="thumbnail center-block">
+        <span class="center-block glyphicon glyphicon-flash"></span>
+      </div>
+      <h2>
+        Clojure Crash Course
+        <small>
+          <span class="label label-success">Live</span>
+        </small>
+      </h2>
+      <h4>
+        <span class="text-muted">
+          Mentor:
+          <a href="http://lifeisagraph.net">Jeff Rose</a>
+        </span>
+      </h4>
+      <p>
+        This course is being taught by
+        <a href="http://lifeisagraph.net">Jeff Rose</a>
+        , creator of the
+        <a href="http://overtone.github.io">Overtone library</a>
+        . Jeff has been hacking on Clojure since it came out, and thinks it's the future of programming.
+      </p>
+      <p></p>
+    </div>
+  </div>
+  <div class="col-sm-4 feature-course">
+    <div class="content-wrap center-block">
+      <div class="thumbnail center-block">
+        <span class="center-block glyphicon glyphicon-flash"></span>
+      </div>
+      <h2>
+        Clojure Crash Course
+        <small>
+          <span class="label label-success">Live</span>
+        </small>
+      </h2>
+      <h4>
+        <span class="text-muted">
+          Mentor:
+          <a href="http://likely.co">Likely</a>
+        </span>
+      </h4>
+      <p>
+        This course is being taught by the developers at
+        <a href="http://likely.co">Likely</a>
+        , Likely performs analysis of massive data-sets using Clojure. And they're always looking to hire great people.
+      </p>
+      <p></p>
+    </div>
+  </div>
+  <div class="col-sm-4 feature-course">
+    <div class="content-wrap center-block">
+      <div class="thumbnail center-block">
+        <span class="center-block glyphicon glyphicon-flash"></span>
+      </div>
+      <h2>
+        Clojure Crash Course
+        <small>
+          <span class="label label-success">Live</span>
+        </small>
+      </h2>
+      <h4>
+        <span class="text-muted">
+          Mentor:
+          <a href="https://github.com/krisajenkins">Kris Jenkins</a>
+        </span>
+      </h4>
+      <p>
+        <a href="https://github.com/krisajenkins">Kris</a>
+        is a veteran hacker and entrepreneur. He's a long-standing member of the London Clojurians, and a devout follower of the Church of Emacs. Kris has a great sense of humour, his classes are a lot of fun.
+      </p>
+      <p></p>
+    </div>
+
+    <!-- /.col-sm-4 feature-course --> </div>
+  <div class="row">
+
+    <!--div class="col-xs-12 text-center">
+    <a data-toggle="collapse" href="" data-target="#current-courses">Close section ^</a>
+  </div-->
+</div>
+</div>
+<hr class="feature">
+<div class="row featurette">
+  <div class="col-md-12">
+    <h2 class="featurette-heading">
+      What's a course like?
+      <span class="lead">
+        <a href="#/students">Learn more</a>
+      </span>
+    </h2>
+
+  </div>
+      <div class="col-md-2">
+      <div class="center-block">
+    <a href="http://mattsenior.com/" class="thumbnail"><img src="https://2.gravatar.com/avatar/ec0255cd9dab851481f0084e99e4b160?s=100" class="img-circle img-responsive"></a>
+  </div>
+  </div>
+
+  <div class="col-md-8">
+    <blockquote>
+      <p class="lead">
+        In four weeks I’ve not only learnt the language basics, but how to keep track of state in a multiplayer online game, how to manage asynchronous event streams from server to UI, how to consume and manipulate data from third-party APIs, and plenty more.
+      </p>
+      <p>
+        <strong>I can’t wait for the next one.</strong>
+      </p>
+      <small>
+        <a href="http://mattsenior.com/">Matt Senior</a>
+      </small>
+    </blockquote>
+  </div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="teachers">
+<div class="col-md-12">
+  <h2 class="featurette-heading">
+    What's your favourite technology?
+    <span class="lead">
+      <a href="#/teaching">Teach it!</a>
+    </span>
+  </h2>
+
+  <p class="lead" id="why-host">
+    There is probably someone out there who wants to learn what you know. We'll connect you to those people. Learn more
+    <a href="#/teaching">here.</a>
+  </p>
+
+</div>
+    <div class="col-md-2">
+    <div class="center-block">
+  <a href="https://github.com/krisajenkins" class="thumbnail"><img src="https://2.gravatar.com/avatar/2d0beb04f1fa078ace4f044c00721cca?s=100" class="img-circle img-responsive"></a>
+</div>
+</div>
+<div class="col-md-8">
+  <blockquote>
+    <p class="lead">
+      Teaching A Crash Course in Clojure with Dactic was a huge pleasure & <strong>immensely rewarding</strong>. I got to meet enthusiastic developers and help them on their journey into Functional Programming; give something back to the Clojure community; and solidify all the knowledge I’ve gained myself over the years. It was a brilliant opportunity & a <strong>highlight of my year</strong>.
+    </p>
+    <small>
+      <a href="https://github.com/krisajenkins">Kris Jenkins</a>
+    </small>
+  </blockquote>
+</div>
+</div>
+<hr class="feature">
+<div class="row featurette" id="startups">
+<div class="col-md-10">
+  <h2 class="featurette-heading">
+    Are you a startup?
+    <span class="lead">
+      <a href="#/startups">Host a course</a>
+    </span>
+  </h2>
+
+  <p class="lead" id="why-host">
+    Dactic is a community of developers that love to learn. Developers use our site to get together and learn new things in semi-structured courses. Our courses are a great way for startups to discover talent without having to work with recruiters.
+  </p>
+</div>
+</div>

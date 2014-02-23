@@ -1,0 +1,62 @@
+    <div class="navbar navbar-default navbar-fixed-top dactic-nav" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dactic</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Students <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/students">Testimonials</a></li>
+                <li><a href="#/students#studentFAQ">F.A.Q.</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Teachers <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/teaching">Testimonials</a></li>
+                <li><a href="#/teaching#teachingFAQHeader">F.A.Q.</a></li>
+                <li><a href="#/teaching/submit-proposal">Teach a new course</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#/startups" >Companies</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="form-inline header-pad-form-element" role="form" ng-submit="update(user)" ng-controller="UpdatesFormRegCtrl">
+
+                <div class="input-group nav-input-align">
+
+                  <input type="email" class="form-control" ng-model="user.email" ng-bind="asd" placeholder="{{master.formPlaceholder}}" required>
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">{{master.button}}</button>
+                  </span>
+                </div>
+              </form>
+            </li>
+            <li>
+              <a href="https://twitter.com/LearnOnDactic" class="nav-twitter-wrap"> <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+                <p class="navbar-text" ng-show="currentUser.state"><a ng-href="#/profile/{{currentUser.id}}">{{currentUser.email}}</a> | <a ng-show="currentUser.state" href="#" ng-click="logOut()" class="">log-out</a></p>
+                <p ng-hide="currentUser.state" class="navbar-text"><a  href="#/login" class="">log-in</a> | <a href="#/register" class="">register</a></p>
+
+
+
+
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse --> </div>
+    </div>
