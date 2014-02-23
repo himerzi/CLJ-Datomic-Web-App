@@ -1,5 +1,5 @@
 (ns dactic-server.controllers.auth
-  (:require 
+  (:require
             [liberator.core :refer [defresource]]
             ;;validation
             [noir.validation :as validation :refer [rule errors? has-value? get-errors on-error is-email?]]
@@ -24,7 +24,7 @@
   (session/put! :user-id id)
   )
 (defn reg-validation [{name :name pass :password email :email}]
-  
+
   (rule (has-value? name)
         [:name "name is required"])
   (rule (<= 2 (count (clojure.string/split (clojure.string/triml name) #"\s+" )))
@@ -76,7 +76,7 @@
 ;;;;;;  Login Logic ;;;;;;
 
 (defn handle-login [id pass]
-  
+
   (rule (has-value? id)
         [:id "screen name is required"])
   (rule (has-value? pass)
@@ -98,7 +98,7 @@
               (let [email (or email "")
                     pass (or pass "")]  (handle-login email pass)))
 ;;  :post! (fn [ctx] {::location "http://example.com"})
-;;  :post-redirect? false 
+;;  :post-redirect? false
   :handle-created (fn [{l :user-id }] {:profile-location l })
   :handle-forbidden utils/errors-in-ctx
   )
@@ -129,7 +129,4 @@
   :available-media-types ["application/json"]
   :allowed-methods [:get]
   :handle-ok  (fn [_] (let [return ( auth-db/get-user-detail (read-string id) (= (read-string id) (session/get :user-id)))]
-                       (if (= (return :first-name) "Kris")
-                         (-> (assoc return :testimonials (:testimonials krisxtra))
-                             (assoc-in [:courses :past] (:past krisxtra)))
-                         return))))
+                       return)))
